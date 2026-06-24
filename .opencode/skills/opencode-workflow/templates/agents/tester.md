@@ -1,4 +1,5 @@
 ---
+name: tester
 description: Writes and maintains {{TEST_FRAMEWORK}} unit tests using the {{TEST_SKILL}} skill. Use when writing new tests or fixing existing tests.
 mode: subagent
 ---

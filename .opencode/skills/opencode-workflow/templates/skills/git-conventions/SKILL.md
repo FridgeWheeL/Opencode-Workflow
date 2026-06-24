@@ -5,6 +5,22 @@ description: Use when branching, committing, or reviewing PRs. Covers branch nam
 
 # Git Conventions
 
+## Agent-managed content
+
+This skill is maintained dynamically by agents as the project evolves.
+When any agent discovers project-specific git patterns, it should update
+the relevant section below:
+
+- A different branch naming scheme (e.g., `main/`, `release/`, `hotfix/`)
+- Rebase vs merge workflow preferences
+- Squash merge or linear history requirements
+- Signed commits or GPG requirements
+- Branch protection or CI gate rules
+- Specific PR template or review requirements
+
+Do not remove content that another agent or the user has added — only
+add to or refine it.
+
 ## Branch naming
 
 | Pattern | When |
@@ -16,44 +32,40 @@ description: Use when branching, committing, or reviewing PRs. Covers branch nam
 | `test/TICKETN` | Adding or fixing tests |
 
 Always reference a ticket number when one exists.
-Ticket artifacts live under `docs/Tasks/TICKETN-Short-Description/`.
 
 ## Commit messages
 
-Use conventional commits:
+Use the project's standard format:
 
 ```
-<type>(<scope>): <subject>
+TICKETN: Brief description of the change
 
-<body>
+- Bullet summary of each logical change
+- Another change
 ```
 
-- **Types**: `feature`, `bugfix`, `test`, `refactor`, `docs`, `style`
-- **Scope**: optional, lowercase (e.g., `api`, `auth`, `ui`)
 - **Subject**: imperative mood, <=50 chars, no trailing period
-- **Body**: optional, wrap at 72 chars, explain *why* not *what*
+- **Body**: bullet list of specific changes for reviewer context
 
 Examples:
 ```
-feature(auth): add JWT token refresh endpoint
+TICKET-1: Add Retention Service
 
-The existing token expiry of 15 minutes was too short for long-running
-sessions. This adds a /auth/refresh endpoint that issues a new token
-given a valid refresh token.
-```
-
-```
-bugfix: handle null reference in OrderService.GetTotal
+- Added new Retention Service
+- Refactored existing collections by removing TTL indexes
+- Updated related unit tests
 ```
 
 ```
-test: add coverage for PricingService edge cases
+TICKET-45: Fix null reference in OrderService.GetTotal
+
+- Added null guard before accessing customer property
+- Added unit test covering the edge case
 ```
 
 ## Workflow
 
-- Commit early, commit often. Each commit should compile and pass tests.
-- Rebase locally (`git rebase -i`) to clean up history before push.
+- Commit message must be approved by the user.
 - Do not push until commits are clean and tested.
 - Do not create PRs unless explicitly asked.
 

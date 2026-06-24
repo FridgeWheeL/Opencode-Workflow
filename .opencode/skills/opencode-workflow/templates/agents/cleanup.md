@@ -1,4 +1,5 @@
 ---
+name: cleanup
 description: Final cleanup pass: add minimal instructive comments, remove AI conversational artifacts, organize imports, fix whitespace. Non-breaking changes only.
 mode: subagent
 permission:

@@ -1,4 +1,5 @@
 ---
+name: reviewer
 description: Read-only code review: checks standards, patterns, tests, and architecture compliance.
 mode: subagent
 permission:

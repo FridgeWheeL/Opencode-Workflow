@@ -1,68 +1,49 @@
 ---
 name: architecture
-description: Use when designing or reviewing the project structure. Covers {{ARCH_PATTERN}} layers, SOLID principles, CQRS, and dependency rules.
+description: Use when designing or reviewing the project structure. Covers architecture layers, dependency rules, and conventions.
 ---
 
 # Architecture Standards
 
-See `docs/Architecture/architecture.md` for the architecture diagram and
-full documentation. This skill covers rules and conventions.
+See `docs/Architecture/architecture.md` for the full architecture
+documentation. This skill covers rules and conventions.
+
+## Agent-managed content
+
+This skill is maintained dynamically by the `@architect` agent. As the
+project evolves and new patterns are discovered, the architect should
+update this file to reflect what's actually in use.
+
+When the architect detects any of the following, it should update the
+relevant section below:
+
+- A project structure pattern (monolith, modular monolith, microservices)
+- An architecture pattern (layered, hexagonal, clean, onion, N-tier)
+- Specific frameworks (CQRS, event sourcing, MediatR, etc.)
+- Dependency injection approach
+- Error/exception handling conventions
+- Testing strategy that affects architecture
+- Any other project-wide convention
+
+Do not remove content that another agent or the user has added — only
+add to or refine it.
 
 ## Project structure
 
-Project structure is defined by the solution type. For a Clean Architecture
-.NET solution, the layout follows:
+{{PROJECT_STRUCTURE}}
 
-```
-src/
-  {Project}.Domain/           # Entities, Value Objects, Enums, Domain Events
-  {Project}.Application/      # Commands, Queries, DTOs, Interfaces, Validators
-  {Project}.Infrastructure/   # {{ORMLIB}} DbContext, Repositories, External Services
-  {Project}.Api/              # Controllers, Middleware, Program.cs
-tests/
-  {Project}.Domain.Tests/
-  {Project}.Application.Tests/
-  {Project}.Infrastructure.Tests/
-  {Project}.Api.Tests/
-```
+## Architecture pattern
 
-For non-.NET projects, the structure follows the conventions of the
-respective platform.
+{{ARCH_PATTERN_DESCRIPTION}}
 
 ## Dependency rules
 
-Dependencies flow inward toward the domain/core layer:
+{{DEPENDENCY_RULES}}
 
-```
-Domain/Core -> (nothing)
-Application/UseCases -> Domain/Core
-Infrastructure -> Application
-Presentation -> Application
-```
+## Conventions
 
-Circular dependencies are forbidden.
+{{ARCHITECTURE_CONVENTIONS}}
 
-## SOLID applied
+## Project roles
 
-| Principle | How we apply |
-|-----------|--------------|
-| Single Responsibility | One class = one reason to change |
-| Open/Closed | Extend via new handlers or decorators |
-| Liskov Substitution | Interface implementations are drop-in |
-| Interface Segregation | Small, focused interfaces |
-| Dependency Inversion | High-level modules define interfaces; low-level modules implement them |
-
-## CQRS with MediatR (if applicable)
-
-- **Commands**: mutate state. Named `{Action}{Entity}Command`.
-- **Queries**: return data. Named `Get{Entity}Query`.
-- **Handlers**: `IRequestHandler<TRequest, TResponse>`. One handler per
-  command/query.
-- **Validators**: FluentValidation `AbstractValidator<T>`.
-- **Behaviours**: cross-cutting via `IPipelineBehavior`.
-
-## Exception handling
-
-- Expected failures return result objects with error codes.
-- Unexpected exceptions are caught by global middleware.
-- Validation failures return structured error responses.
+{{PROJECT_ROLES_TABLE}}

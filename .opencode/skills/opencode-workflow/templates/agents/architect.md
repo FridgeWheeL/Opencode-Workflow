@@ -1,4 +1,5 @@
 ---
+name: architect
 description: Designs overall solution structure, chooses technologies, defines high-level architecture, maintains architecture docs, and advises on high-level architecture decisions.
 mode: subagent
 permission:

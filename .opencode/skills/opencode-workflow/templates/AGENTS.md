@@ -23,8 +23,7 @@ This is a **{{SOLUTION_NAME}}** project ({{SOLUTION_TYPE}}). See
 
 Apply the **git-conventions** skill for full details. Key rules:
 - Branch: `feature/TICKETN`, `bugfix/TICKETN`
-- Commits: conventional commits (`feature:`, `bugfix:`, `test:`,
-  `refactor:`). Imperative mood, 50-char subject, body wraps at 72.
+- Commits: follow §10 Commit Workflow — `TICKETN: Brief description` with bullet list of changes
 - Commit early, commit often — each commit should compile and pass tests.
 
 ## 5. Architecture
