@@ -9,35 +9,18 @@
     "planner": {
       "description": "Produces per-ticket implementation plans working within the existing architecture. Read-only. Never makes architecture decisions.",
       "mode": "subagent",
-      "model": "lmstudio/qwen3.6-35b-a3b",
       "permission": {
         "edit": "deny",
         "bash": "ask"
       }
     },
-    "architect": {
-      "description": "Designs overall solution structure, chooses technologies, defines high-level architecture, maintains architecture docs.",
-      "mode": "subagent",
-      "model": "lmstudio/qwen3.6-35b-a3b",
-      "permission": {
-        "edit": "allow",
-        "bash": "ask"
-      }
-    },
     "developer": {
       "description": "Implements production code following AGENTS.md standards and the plan.",
-      "model": "lmstudio/qwen3.6-35b-a3b",
-      "mode": "subagent"
-    },
-    "tester": {
-      "description": "Writes and maintains  unit tests using the  skill.",
-      "model": "lmstudio/qwen3.6-35b-a3b",
       "mode": "subagent"
     },
     "reviewer": {
       "description": "Read-only code review: checks standards, patterns, tests, and architecture compliance.",
       "mode": "subagent",
-      "model": "lmstudio/qwen3.6-35b-a3b",
       "permission": {
         "edit": "deny",
         "bash": "ask"
@@ -46,7 +29,6 @@
     "cleanup": {
       "description": "Final cleanup pass: add minimal instructive comments, remove AI conversational artifacts, organize imports, fix whitespace.",
       "mode": "subagent",
-      "model": "lmstudio/qwen3.6-35b-a3b",
       "permission": {
         "bash": "ask"
       }

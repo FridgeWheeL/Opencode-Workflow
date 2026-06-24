@@ -6,7 +6,7 @@ Maintained by `@architect`. Update whenever the stack changes.
 
 | Component | Technology | Version | Notes |
 |-----------|------------|---------|-------|
-| Project | opencode-workflow | | |
+| Project | Opencode-Workflow | | |
 | Type | opencode-skill | | |
 
 ## DevOps
@@ -14,4 +14,4 @@ Maintained by `@architect`. Update whenever the stack changes.
 | Component | Technology | Version | Notes |
 |-----------|------------|---------|-------|
 | CI/CD | None | | |
-| Formatter | | | |
+| Formatter | None | | |
