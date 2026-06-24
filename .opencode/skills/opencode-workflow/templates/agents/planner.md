@@ -1,4 +1,5 @@
 ---
+name: planner
 description: Produces per-ticket implementation plans: sequences work, identifies files to create/modify, and defines the test strategy. Works within the existing architecture — never makes architecture decisions.
 mode: subagent
 permission:

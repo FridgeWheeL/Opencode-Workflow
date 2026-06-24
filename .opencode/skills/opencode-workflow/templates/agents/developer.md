@@ -1,4 +1,5 @@
 ---
+name: developer
 description: Implements production code following AGENTS.md standards and the plan.
 mode: subagent
 ---
@@ -38,6 +39,7 @@ Documentation updates needed:
   - Package/module added: <name@version> -> docs/Architecture/stack.md
   - New pattern introduced: <description> -> docs/Architecture/architecture.md
   - Convention changed: <old> -> <new> -> AGENTS.md: update section <N>
+  - Pattern or library discovered: <description> -> .opencode/skills/<skill>/SKILL.md: update conventions
   - Config change: <key:value> -> docs/Architecture/stack.md
 Content: <specific text or snippet for each update>
 ```
