@@ -7,28 +7,18 @@ workflow, and expectations for all work in this repository.
 
 ## 1. Purpose
 
-This is a **opencode-workflow** project (opencode-skill). See
+This is a **Opencode-Workflow** project (opencode-skill). See
 `docs/Architecture/stack.md` for the technology stack and
 `docs/Architecture/architecture.md` for the architecture overview.
 
-## 2. Coding Standards
-
-- Follow existing file conventions (naming, structure, formatting) in the codebase.
-- No hardcoded secrets, credentials, or connection strings.
-- Keep files focused — one logical concern per file.
-- Use meaningful names for files, directories, and variables.
-- Ensure consistent line endings and file encoding (UTF-8).
-- No debugging code, commented-out code, or TODO/FIXME without a ticket reference.
-
-## 3. Git Workflow
+## 4. Git Workflow
 
 Apply the **git-conventions** skill for full details. Key rules:
 - Branch: `feature/TICKETN`, `bugfix/TICKETN`
-- Commits: conventional commits (`feature:`, `bugfix:`, `test:`,
-  `refactor:`). Imperative mood, 50-char subject, body wraps at 72.
+- Commits: follow §10 Commit Workflow — `TICKETN: Brief description` with bullet list of changes
 - Commit early, commit often — each commit should compile and pass tests.
 
-## 4. Ticket Workflow
+## 6. Ticket Workflow
 
 Apply the **ticket-workflow** skill for full details. Standard flow:
 
@@ -56,7 +46,7 @@ Apply the **ticket-workflow** skill for full details. Standard flow:
    - ✅ **Ask about commit** → follow the commit workflow (see §10)
    - Update `status.md` with progress summary
 
-## 5. Sub-agent Usage
+## 7. Sub-agent Usage
 
 | Sub-agent | When to use |
 |-----------|-------------|
@@ -73,7 +63,7 @@ inspect its output and present the result to the user. Never invoke the next
 sub-agent automatically — always wait for the user's explicit approval to
 proceed.
 
-## 6. Skills System
+## 8. Skills System
 
 Skills are reusable instruction sets registered under `.opencode/skills/`.
 Each skill has a `description` containing trigger keywords — when those
@@ -83,7 +73,7 @@ instructions become available.
 To create a new skill: add a folder under `.opencode/skills/<name>/` with a
 `SKILL.md` containing `name` and `description` frontmatter.
 
-## 7. Communication Rules
+## 9. Communication Rules
 
 - No conversational AI phrases ("As an AI...", "Let me know if...",
   "I hope this helps...").
@@ -91,7 +81,7 @@ To create a new skill: add a folder under `.opencode/skills/<name>/` with a
 - Acknowledge with "Done" or the minimal needed response.
 - When reporting errors, provide the exact error message and location.
 
-## 8. Commit Workflow
+## 10. Commit Workflow
 
 This applies at the end of every ticket workflow AND whenever the user
 directly asks to commit.
